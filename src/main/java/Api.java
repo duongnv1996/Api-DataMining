@@ -42,8 +42,8 @@ public class Api {
                     .end(response);
         });
 
-        httpServer.requestHandler(router::accept).listen(Integer.parseInt(System.getProperty("PORT")), "0.0.0.0");
-        System.out.println("Listen on port: " + System.getProperty("PORT"));
+        httpServer.requestHandler(router::accept).listen(Integer.parseInt(System.getenv("PORT")), "0.0.0.0");
+        System.out.println("Listen on port: " + System.getenv("PORT"));
     }
 
     private static void init() {
