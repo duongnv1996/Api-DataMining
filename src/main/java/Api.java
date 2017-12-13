@@ -42,8 +42,8 @@ public class Api {
                     .end(response);
         });
 
-        httpServer.requestHandler(router::accept).listen(Integer.parseInt(System.getenv("PORT")), "0.0.0.0");
-        System.out.println("Listen on port: " + System.getenv("PORT"));
+        httpServer.requestHandler(router::accept).listen(Integer.parseInt(System.getProperty("PORT")), "0.0.0.0");
+        System.out.println("Listen on port: " + System.getProperty("PORT"));
     }
 
     private static void init() {
@@ -54,7 +54,7 @@ public class Api {
                 "li",
                 "img",
                 "a",
-                "a h3",
+                    "a h3",
                 "a strong"
         ));
         listWebsite.add(new Website("https://fptshop.com.vn",
