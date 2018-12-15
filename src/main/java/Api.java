@@ -42,7 +42,7 @@ public class Api {
                     .end(response);
         });
         router.get("/getUpdate/").blockingHandler(context -> {
-            ApiResponse<List<Phone>> apiResponse = new ApiResponse<>();
+            ApiResponse<Boolean> apiResponse = new ApiResponse<>();
         apiResponse.setCode(200);
         apiResponse.setMessage("Success");
         apiResponse.setData(true);
