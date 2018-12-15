@@ -41,6 +41,16 @@ public class Api {
                     .setStatusCode(200)
                     .end(response);
         });
+        router.get("/getUpdate/").blockingHandler(context -> {
+            ApiResponse<List<Phone>> apiResponse = new ApiResponse<>();
+        apiResponse.setCode(200);
+        apiResponse.setMessage("Success");
+        apiResponse.setData(true);
+       String response = new Gson().toJson(apiResponse);
+            context.response()
+                    .setStatusCode(200)
+                    .end(response);
+        });
 
         httpServer.requestHandler(router::accept).listen(Integer.parseInt(System.getenv("PORT")), "0.0.0.0");
         System.out.println("Listen on port: " + System.getenv("PORT"));
