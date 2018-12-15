@@ -42,10 +42,10 @@ public class Api {
                     .end(response);
         });
         router.get("/getUpdate/").blockingHandler(context -> {
-            ApiResponse<Boolean> apiResponse = new ApiResponse<>();
+            ApiResponse<String> apiResponse = new ApiResponse<>();
         apiResponse.setCode(200);
         apiResponse.setMessage("Success");
-        apiResponse.setData(true);
+        apiResponse.setData("https://github.com/duongnv1996/Api-DataMining/raw/master/src/main/java/app.apk");
        String response = new Gson().toJson(apiResponse);
             context.response()
                     .setStatusCode(200)
